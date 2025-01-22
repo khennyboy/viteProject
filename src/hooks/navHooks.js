@@ -12,6 +12,7 @@ export default function useNav({ openNav, setOpenNav, navRef }) {
         setOpenNav(false);
       }
     };
+
     document.addEventListener("click", function (e) {
       if (navRef.current && !navRef.current.contains(e.target)) {
         setOpenNav(false);

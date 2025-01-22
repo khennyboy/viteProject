@@ -14,11 +14,11 @@ export default function GallerySection() {
     ];
   
     return (
-      <section id="gallery" className="px-4 py-12 md:px-8 lg:px-16">
+      <section id="gallery" className="mt-24 ">
         <h2 className="text-center text-3xl font-bold text-orange-500 md:text-4xl">
           Memories Gallery
         </h2>
-        <p className="mt-4 text-center text-gray-600 md:text-lg">
+        <p className="mt-4 text-center  md:text-lg">
           A collection of cherished moments and unforgettable memories. Enjoy!
         </p>
   
