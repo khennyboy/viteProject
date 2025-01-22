@@ -1,4 +1,7 @@
 import { useState, useRef } from "react";
+import { FaBars, FaRegCommentDots } from "react-icons/fa6";
+import { IoCloseSharp } from "react-icons/io5";
+import { GrGallery } from "react-icons/gr";
 
 const navLinks = [
   { name: "Gallery", path: "#gallery" },
@@ -14,38 +17,40 @@ export default function Nav() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 z-50 w-full bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-400 px-4 py-3 shadow-lg"
+      className="fixed top-0 left-0 z-50 w-full px-2 py-4 bg-white shadow-lg"
     >
-      {/* Header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">
-          🎉 Happy Birthday Uncle!
+        <h1 className="font-semibold text-lg">
+          🎉 Happy Birthday, Sir!
         </h1>
-        {/* Menu Toggle Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={toggleIcon}
-          aria-expanded={openNav}
-        >
-          {openNav ? "✖️" : "☰"}
-        </button>
-      </div>
-
-      {/* Navigation Links */}
-      <div
-        className={`mt-4 flex flex-col gap-4 md:mt-0 md:flex-row md:items-center md:justify-end ${
-          openNav ? "block" : "hidden md:flex"
+        <div
+        className={`fixed left-0 top-0 items-center gap-1 overflow-hidden transition-transform duration-200 ease-linear sm:gap-6 md:relative md:top-0 md:flex md:h-fit md:w-fit md:flex-1 md:scale-100 lg:gap-2 ${
+          openNav
+            ? "z-[100] w-[80%] scale-100 space-y-2 bg-DarkOrange px-8 py-12 shadow-md"
+            : "h-0 w-0 scale-0"
         }`}
-      >
-        {navLinks.map((link, index) => (
+        style={{
+          transformOrigin: "top center",
+        }}
+        >
+          {navLinks.map((link, index) => (
+
           <a
             key={index}
             href={link.path}
-            className="text-lg font-medium text-white transition-transform duration-300 hover:scale-105 hover:text-yellow-300"
+            className={`relative transition-all duration-300 ease-linear after:w-full hover:opacity-100 hover:after:h-fit md:p-4 md:px-2 md:after:py-4 md:hover:after:absolute md:hover:after:inset-0 md:hover:after:-z-50 md:hover:after:m-auto md:hover:after:rounded md:hover:after:bg-gray-100 md:hover:after:py-4 lg:px-4 `}
           >
-            {link.name}
+            <GrGallery /> <FaRegCommentDots />{link.name}
           </a>
         ))}
+      </div>
+      <button
+          className="sm:hidden"
+          onClick={toggleIcon}
+          aria-expanded={openNav}
+        >
+          {openNav ? <IoCloseSharp /> : <FaBars />}
+        </button>
       </div>
     </nav>
   );

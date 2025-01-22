@@ -6,7 +6,7 @@ export default function Audio(info) {
  
   return (
     <div>
-      <audio ref={title} loop autoPlay>
+      <audio ref={title} loop >
         <source src={birthdaySong} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
