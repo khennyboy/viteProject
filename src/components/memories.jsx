@@ -19,7 +19,7 @@ export default function GallerySection() {
   
     return (
       <section id="gallery" className="mt-24" ref={galleryRef}>
-        <h2 className="text-center text-3xl font-bold text-orange-500 md:text-4xl">
+        <h2 className="text-center text-xl font-bold text-orange-500 md:text-2xl">
           Memories Gallery
         </h2>
         <p className="mt-4 text-center leading-snug md:text-[1.15rem]">

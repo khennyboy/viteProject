@@ -6,6 +6,7 @@ import Memories from './components/memories'
 import Comment from './components/comment'
 import Audio from './components/audio'
 import React, { useCallback, useRef, useState } from 'react'
+import Notify from './components/notification'
 
 export const SectionsRef = React.createContext()
 
@@ -45,9 +46,12 @@ const App = () => {
       </div>
       <Footer/>
     </div>
+    <Notify/>
     </SectionsRef.Provider>
   )
 }
 
 export default App
+
+
 
