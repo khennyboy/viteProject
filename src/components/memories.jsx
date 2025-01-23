@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import image1 from '../assets/images/image-1.jpg'
+import { SectionsRef } from '../App';
 
 export default function GallerySection() {
+
+  const {galleryRef} = useContext(SectionsRef)
     const images = [
       image1,
       image1,
@@ -14,11 +18,11 @@ export default function GallerySection() {
     ];
   
     return (
-      <section id="gallery" className="mt-24 ">
+      <section id="gallery" className="mt-24" ref={galleryRef}>
         <h2 className="text-center text-3xl font-bold text-orange-500 md:text-4xl">
           Memories Gallery
         </h2>
-        <p className="mt-4 text-center  md:text-lg">
+        <p className="mt-4 text-center leading-snug md:text-[1.15rem]">
           A collection of cherished moments and unforgettable memories. Enjoy!
         </p>
   

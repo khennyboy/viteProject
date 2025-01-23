@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { SectionsRef } from "../App";
+
 export default function BirthdayWishes() {
- 
+ const {wishesRef} = useContext(SectionsRef)
   return (
-    <section className="mt-24 bg-gray-50" id="wishes">
+    <section ref = {wishesRef} className="mt-24 bg-gray-50" id="wishes">
       <h2 className="text-3xl font-bold text-center mb-8">Leave Your Birthday Wishes</h2>
       <div className="flex flex-col lg:flex-row lg:space-x-8">
         <div className="flex-1">

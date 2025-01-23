@@ -12,7 +12,7 @@ const navLinks = [
 export default function Nav() {
   const [openNav, setOpenNav] = useState(false);
   const navRef = useRef(null);
-
+  
   function toggleIcon(e) {
     e.stopPropagation()
     setOpenNav((prev) => !prev);
@@ -46,11 +46,12 @@ export default function Nav() {
           {navLinks.map((link, index) => (
 
           <a
+            onClick={()=>setOpenNav(false)}
             key={index}
             href={link.path}
-            className={`cursor-pointer flex gap-2 items-center text-white/80 duration-200 transition-all ease-linear hover:text-white py-1 sm:px-3 sm:py-[6px] w-fit sm:text-black/80 sm:hover:text-black sm:hover:rounded-[4px] sm:hover:bg-gray-100`}
+            className={ ` font-semibold cursor-pointer flex gap-2 items-center text-white duration-200 transition-all ease-linear hover:text-white py-1 sm:px-3 sm:py-[6px] w-fit sm:text-black/70 sm:hover:text-black sm:hover:rounded-[4px] sm:hover:bg-gray-100`}
           >
-            <span className="inline-block align-middle">{link.icon}</span> 
+            <span>{link.icon}</span> 
             <span>{link.name}</span>
           </a>
         ))}

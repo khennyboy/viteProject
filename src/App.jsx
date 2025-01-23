@@ -5,13 +5,16 @@ import Home from './components/home'
 import Memories from './components/memories'
 import Comment from './components/comment'
 import Audio from './components/audio'
-import { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 
+export const SectionsRef = React.createContext()
 
 const App = () => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+  const galleryRef = useRef(null)
+  const wishesRef = useRef(null)
+
   const handleDoubleClick = useCallback(()=>{
   
     if (audioRef.current) {
@@ -31,6 +34,7 @@ const App = () => {
     // },[])
 
   return (
+    <SectionsRef.Provider value={{galleryRef, wishesRef}}>
     <div onDoubleClick={()=>handleDoubleClick()}>
       <Nav/>
       <div className='mt-24 md:mt-32 lg:mt-40 px-3 md:px-8 lg:px-16'>
@@ -41,6 +45,7 @@ const App = () => {
       </div>
       <Footer/>
     </div>
+    </SectionsRef.Provider>
   )
 }
 
