@@ -68,8 +68,8 @@ export default function GallerySection() {
         {images.map((image, index) => (
           <a
             href={image.largeURL}
-            // data-pswp-width={image.width}
-            // data-pswp-height={image.height}
+            data-pswp-width={image.width}
+            data-pswp-height={image.height}
             key={`gallery-${index}`}
             target="_blank"
             rel="noreferrer"
