@@ -42,3 +42,6 @@ textarea {
 }
 
 
+.pswp__img{
+  object-fit: contain;
+}
