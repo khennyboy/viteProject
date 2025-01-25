@@ -13,7 +13,7 @@ const WishesSkeleton = () => {
                 speed={2}
                 width={70}
                 height={70}
-                backgroundColor="#f3f3f3"
+                backgroundColor="#C8C8C8"
                 foregroundColor="#E0E0E0"
               >
                 <rect x="0" y="0" rx="50%" ry="50%" width="100%" height="100%" />
@@ -22,7 +22,7 @@ const WishesSkeleton = () => {
                   <ContentLoader
                     speed={2}
                     width='100%'
-                    backgroundColor="#f3f3f3"
+                    backgroundColor="#C8C8C8"
                     foregroundColor="#E0E0E0"
                   >
                     <rect x="0" y="0" rx="4" ry="4" width="50%" height="40" />
