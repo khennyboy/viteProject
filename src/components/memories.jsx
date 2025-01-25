@@ -75,6 +75,7 @@ export default function GallerySection() {
             rel="noreferrer"
           >
             <img
+              loading="lazy"
               src={image.thumbnailURL}
               alt={`Gallery Image ${index + 1}`}
               className={`w-full object-cover rounded-md shadow-md ${

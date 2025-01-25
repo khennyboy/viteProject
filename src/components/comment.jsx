@@ -90,11 +90,12 @@ export default function BirthdayWishes() {
         </div>
 
       
-        <div className="hidden md:block max-w-80 xl:max-w-[340px]  justify-self-end lg:justify-self-center">
+        <div className="hidden md:block w-full max-w-sm  justify-self-end lg:justify-self-center">
           <img
-            src="https://plus.unsplash.com/premium_photo-1677221924410-0d27f4940396?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1578922864601-79dcc7cbcea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmlydGhkYXklMjBjYWtlfGVufDB8fDB8fHww"
             alt="Birthday Celebration"
-            className="w-full aspect-square object-cover rounded-lg shadow-md"
+            loading="lazy"
+            className="w-full object-contain rounded-lg"
           />
         </div>
       </div>

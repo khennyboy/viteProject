@@ -42,28 +42,3 @@ textarea {
 }
 
 
-
-/* .pswp__img,
-.pswp__img img {
-  /* max-width: 600px;   */
-  height: 400px;      
-  width: 90%;
-  object-fit: contain;       
-}
-
-
-@media (max-width: 768px) {
-  .pswp__img img {
-    height: 400px; 
-    width: 90% !important;  
-  }
-}
-
-
-@media (min-width: 1024px) {
-  .pswp__img img{
-      width: 600px;
-      height: 400px;           
-      max-width: 600px;      
-  }
-} */
