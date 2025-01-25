@@ -15,7 +15,8 @@ export default {
         GrayishBlue: "hsl(220, 14%, 75%)",
         LightGrayishBlue: "hsl(223, 64%, 98%)",
         Black: "hsl(0, 0%, 0%)",
-        footerColor: "#585858"
+        footerColor: "#585858",
+        backDropColor: "rgba(255, 255, 255, 0.1)",
       },
       animation: {
         zoom: "zoom 0.6s linear",

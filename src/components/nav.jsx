@@ -26,7 +26,7 @@ export default function Nav() {
   
   return (
     <nav
-      className="fixed top-0 left-0 z-50 w-full px-3 md:px-8 lg:px-16 py-4 sm:py-3 bg-white shadow-lg"
+      className="fixed top-0 left-0 z-50 w-full px-3 md:px-8 lg:px-20 xl:px-32 py-5  bg-white shadow-lg"
     >
       <div  ref={navRef} className="flex items-center justify-between ">
         <h1 className="font-semibold text-lg sm:flex-1 text-black/70">

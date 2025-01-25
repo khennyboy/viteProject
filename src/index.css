@@ -11,19 +11,32 @@ html, body{
     /* font-family: 'Roboto', sans-serif; */
   }
   
- #mainMessage::-webkit-scrollbar {
+ #wishes::-webkit-scrollbar {
     width: 10px;
   }
   
- #mainMessage::-webkit-scrollbar-track {
+#wishes::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px white;
   }
   
- #mainMessage::-webkit-scrollbar-thumb {
+ #wishes::-webkit-scrollbar-thumb {
     background: orange;
     border-radius: 10px;
   }
-  
- #mainMessage::-webkit-scrollbar-thumb:hover {
+
+#wishes::-webkit-scrollbar-thumb:hover {
     opacity: 0.5;
   }
+
+  input:not(:placeholder-shown) ~ label,
+textarea:not(:placeholder-shown) ~ label {
+  @apply top-0 
+    -translate-y-1/2 
+    bg-gray-200
+    px-4;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color:black;
+  -webkit-background-clip: text;
+}
