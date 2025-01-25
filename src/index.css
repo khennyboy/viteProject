@@ -7,8 +7,7 @@ html, body{
 }
 
    body {
-    font-family: "Kumbh Sans", serif;
-    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Josefin Sans", serif;
   }
   
  #wishes::-webkit-scrollbar {
@@ -39,4 +38,9 @@ textarea:not(:placeholder-shown) ~ label {
 input:-webkit-autofill {
   -webkit-text-fill-color:black;
   -webkit-background-clip: text;
+}
+
+input,
+textarea {
+  font: inherit;
 }

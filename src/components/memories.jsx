@@ -43,7 +43,7 @@ export default function GallerySection() {
     image12,
     image13,
     image14,
-    imae15
+    image15
   ];
 
   const slides = images.map((image) => ({ src: image }));

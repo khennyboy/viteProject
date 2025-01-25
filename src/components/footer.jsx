@@ -13,7 +13,7 @@ export default function Footer() {
     { name: "Wishes", path: wishesRef, icon: <FaRegCommentDots /> },
   ];
   return (
-    <footer className="bg-footerColor px-4 py-12 md:py-24  text-white md:px-8 lg:px-20 xl:px-32 mt-24">
+    <footer className="bg-footerColor px-4 py-16 md:py-24  text-white md:px-8 lg:px-20 xl:px-32 mt-24">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-5 ">
         <div className="pr-4 md:col-span-2">
           <h2 className="mb-4 text-lg md:text-xl font-semibold">Designed by SheriffBaba</h2>

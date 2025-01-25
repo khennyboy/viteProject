@@ -86,7 +86,7 @@ export default function BirthdayWishes() {
         </div>
 
       
-        <div className="hidden md:block max-w-sm justify-self-end lg:justify-self-center">
+        <div className="hidden md:block max-w-80 xl:max-w-[340px] transform -rotate-12 justify-self-end lg:justify-self-center">
           <img
             src={image1}
             alt="Birthday Celebration"

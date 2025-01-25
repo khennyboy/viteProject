@@ -20,7 +20,7 @@ export default function HomePage() {
           </button>
         </div>
   
-        <div className="w-full max-w-sm lg:max-w-md ">
+        <div className="w-full max-w-sm xl:max-w-md ">
           <img
             src={image2} 
             alt="CelebrantImage"
