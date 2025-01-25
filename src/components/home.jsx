@@ -10,7 +10,7 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold text-orange-500 md:text-4xl lg:text-5xl">
             Happy Birthday, Sir!
           </h1>
-          <p className="mt-4 text-[1.07rem] text-gray-700 sm:text-[1.1rem] font-semibold lg:text-[1.2rem] leading-snug  md:mt-6">
+          <p className="mt-4 text-[1.07rem] text-gray-700 sm:text-[1.1rem] font-semibold lg:text-[1.2rem] leading-tight  md:mt-6">
             Wishing you a day filled with laughter, love, and joy. You&#39;ve been an
             inspiration to us all, and we hope this year brings even more
             wonderful memories. Celebrate big!

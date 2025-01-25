@@ -1,28 +1,32 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { SectionsRef } from "../App";
-import image1 from '../assets/images/image-1.jpg'
 import Error from "./errors";
 import Wishes from "./wishes";
 import { useForm } from "react-hook-form";
 import useEditForm from "../hooks/useForm";
 
-
 export default function BirthdayWishes() {
  const {wishesRef} = useContext(SectionsRef)
+ const formRef = useRef(null)
  const { register, handleSubmit, formState } = useForm();
  const { sendWishes, isSending } = useEditForm()
  const { errors } = formState;
  
  function onSubmit(data) {
-  sendWishes(data)
+  sendWishes(data, {
+    onSuccess :()=>{
+        formRef.current.reset()
+    }
+  })
  }
+
   return (
     <section ref = {wishesRef} className="mt-24 bg-gray-50 py-12 lg:py-16" >
       <Wishes/>
       <h2 className="md:mb-16 mb-12 text-center text-xl font-bold text-orange-500 md:text-2xl">Leave Your Birthday Wishes</h2>
       <div className="grid md:grid-cols-2 px-4 gap-16 items-center ">
       <div className="max-w-md lg:justify-self-center w-full mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form  ref= {formRef} onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-6">
                 <div
                     className="relative border-orange-500/60 border-[1px] border-solid 
@@ -86,9 +90,9 @@ export default function BirthdayWishes() {
         </div>
 
       
-        <div className="hidden md:block max-w-80 xl:max-w-[340px] transform -rotate-12 justify-self-end lg:justify-self-center">
+        <div className="hidden md:block max-w-80 xl:max-w-[340px]  justify-self-end lg:justify-self-center">
           <img
-            src={image1}
+            src="https://plus.unsplash.com/premium_photo-1677221924410-0d27f4940396?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Birthday Celebration"
             className="w-full aspect-square object-cover rounded-lg shadow-md"
           />
@@ -99,4 +103,3 @@ export default function BirthdayWishes() {
 }
 
 
-// https://plus.unsplash.com/premium_photo-1677221924410-0d27f4940396?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D

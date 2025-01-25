@@ -4,12 +4,12 @@ import { getWishes } from "./apiCall";
 export const useWishes = () => {
   const {
     isPending: isLoading,
-    data: products,
+    data,
     error,
     isError,
   } = useQuery({
     queryKey: ["wishes"],
     queryFn: getWishes,
   });
-  return { isLoading, products, error, isError };
+  return { isLoading, data, error, isError };
 };

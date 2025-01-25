@@ -1,7 +1,7 @@
 import supabase from "./supabase";
 
 export async function getWishes() {
-  let { data, error } = await supabase.from("wishes").select("*");
+  let { data, error } = await supabase.from("birthdayWishes").select("*");
   if (error) {
     throw new Error(`${error.message}`);
   }
@@ -9,7 +9,7 @@ export async function getWishes() {
 }
 
 export async function handleWishes(obj) {
-    const { data, error } = await supabase.from("wishes").insert(obj);
+    const { data, error } = await supabase.from("birthdayWishes").insert(obj);
     if (error) {
       throw new Error("Error sending wishes");
     }

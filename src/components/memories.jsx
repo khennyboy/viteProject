@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+import { useContext, useEffect } from "react";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 import image1 from "../assets/images/image-1.jpg";
 import image2 from "../assets/images/image-2.jpg";
 import image3 from "../assets/images/image-3.jpg";
@@ -16,54 +16,44 @@ import image12 from "../assets/images/image-12.jpg";
 import image13 from "../assets/images/image-13.jpg";
 import image14 from "../assets/images/image-14.jpg";
 import image15 from "../assets/images/image-15.jpg";
-
 import { SectionsRef } from "../App";
-import { Gallery } from "react-grid-gallery";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
-
 
 export default function GallerySection() {
-  const { galleryRef } = useContext(SectionsRef);
-  const [open, setOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+  const {galleryRef} = useContext(SectionsRef)
   const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-    image10,
-    image11,
-    image12,
-    image13,
-    image14,
-    image15
+    { largeURL: image1, thumbnailURL: image1, width: 1200, height: 800 },
+    { largeURL: image2, thumbnailURL: image2, width: 1200, height: 800 },
+    { largeURL: image3, thumbnailURL: image3, width: 1200, height: 800 },
+    { largeURL: image4, thumbnailURL: image4, width: 1200, height: 800 },
+    { largeURL: image5, thumbnailURL: image5, width: 1200, height: 800 },
+    { largeURL: image6, thumbnailURL: image6, width: 1200, height: 800 },
+    { largeURL: image7, thumbnailURL: image7, width: 1200, height: 800 },
+    { largeURL: image8, thumbnailURL: image8, width: 1200, height: 800 },
+    { largeURL: image9, thumbnailURL: image9, width: 1200, height: 800 },
+    { largeURL: image10, thumbnailURL: image10, width: 1200, height: 800 },
+    { largeURL: image11, thumbnailURL: image11, width: 1200, height: 800 },
+    { largeURL: image12, thumbnailURL: image12, width: 1200, height: 800 },
+    { largeURL: image13, thumbnailURL: image13, width: 1200, height: 800 },
+    { largeURL: image14, thumbnailURL: image14, width: 1200, height: 800 },
+    { largeURL: image15, thumbnailURL: image15, width: 1200, height: 800 },
   ];
 
-  const slides = images.map((image) => ({ src: image }));
+  useEffect(() => {
+    let lightbox = new PhotoSwipeLightbox({
+      // arrowPrevSVG: leftArrowSVGString,
+      // arrowNextSVG: leftArrowSVGString,
+     
+      gallery: "#gallery",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
 
-  const handleImageClick = (index) => {
-    setCurrentIndex(index);
-    setOpen(true);
-  };
-  const [index, setIndex] = useState(-1);
-
-  const currentImage = images[index];
-  const nextIndex = (index + 1) % images.length;
-  const nextImage = images[nextIndex] || currentImage;
-  const prevIndex = (index + images.length - 1) % images.length;
-  const prevImage = images[prevIndex] || currentImage;
-
-  const handleClick = (index ,item) => setIndex(index);
-  const handleClose = () => setIndex(-1);
-  const handleMovePrev = () => setIndex(prevIndex);
-  const handleMoveNext = () => setIndex(nextIndex);
+    return () => {
+      lightbox.destroy();
+      lightbox = null;
+    };
+  }, []);
 
   return (
     <section id="gallery" className="mt-24" ref={galleryRef}>
@@ -74,30 +64,26 @@ export default function GallerySection() {
         A collection of cherished moments and unforgettable memories. Enjoy!
       </p>
 
-      {/* <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-8">
-       </div> */}
-
-    <div>
-      <Gallery
-        images={images}
-        onClick={handleClick}
-        enableImageSelection={false}
-      />
-      {!!currentImage && (
-        <Lightbox
-          mainSrc={currentImage.original}
-          imageTitle={currentImage.caption}
-          mainSrcThumbnail={currentImage.src}
-          nextSrc={nextImage.original}
-          nextSrcThumbnail={nextImage.src}
-          prevSrc={prevImage.original}
-          prevSrcThumbnail={prevImage.src}
-          onCloseRequest={handleClose}
-          onMovePrevRequest={handleMovePrev}
-          onMoveNextRequest={handleMoveNext}
-        />
-      )}
-    </div>
+      <div className="pswp-gallery mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:gap-x12  md:gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+        {images.map((image, index) => (
+          <a
+            href={image.largeURL}
+            // data-pswp-width={image.width}
+            // data-pswp-height={image.height}
+            key={`gallery-${index}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={image.thumbnailURL}
+              alt={`Gallery Image ${index + 1}`}
+              className={`w-full object-cover rounded-md shadow-md ${
+                index % 2 === 0 ? "h-[250px]" : "h-[300px]"
+              }`}
+            />
+          </a>
+        ))}
+      </div>
     </section>
   );
 }
