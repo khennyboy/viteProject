@@ -83,12 +83,12 @@ export default function Wishes() {
           ))}
         </div>
         <div className="text-right">
-        { wishesCount !=1 && 
+        { wishesCount != 1 || 0  && 
           <button 
           onClick={()=>handleMoreWish()}
             ref={viewMore} 
           className={`cursor-pointer mt-6 px-6 py-3 hover:underline text-orange-500 font-medium hover:text-orange-600 duration-300 ease-linear transition-all`}>
-             {count < wishesCount ? 'View More Wishes...': 'View Less'}
+             {count < wishesCount  ? 'View More Wishes...': 'View Less'}
           </button>
         }
         </div>
