@@ -6,6 +6,9 @@ export default {
       "./components/**/*.{js,ts,jsx,tsx}", 
   ],
   theme: {
+    fontFamily: {
+      sans: ["Josefin Sans", "sans-serif"],
+    },
     extend: {
       colors: {
         DarkOrange: "hsl(26, 100%, 55%)",
