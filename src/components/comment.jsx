@@ -21,13 +21,13 @@ export default function BirthdayWishes() {
  }
 
   return (
-    <section ref = {wishesRef} className="mt-24 bg-gray-50 py-12 lg:py-16" >
+    <section  className="mt-24 bg-gray-50 py-12 lg:py-16" >
       <Wishes/>
       <h2 className="md:mb-16 mb-12 text-center text-xl font-bold text-orange-500 md:text-2xl">Leave Your Birthday Wishes</h2>
       <div className="grid md:grid-cols-2 px-4 gap-16 items-center ">
       <div className="max-w-md lg:justify-self-center w-full mx-auto">
-        <form  ref= {formRef} onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-6">
+        <form  ref= {formRef}  onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-6" ref = {wishesRef}>
                 <div
                     className="relative border-orange-500/60 border-[1px] border-solid 
                     rounded-[10px] mb-1 has-[:focus]:border-orange-500"

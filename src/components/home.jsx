@@ -3,7 +3,7 @@ import image2 from '../assets/images/image-2.jpg'
 import { SectionsRef } from '../App';
 
 export default function HomePage() {
-  const {galleryRef} = useContext(SectionsRef)
+  const {wishesRef} = useContext(SectionsRef)
     return (
       <main className="flex flex-col items-center justify-center gap-10  md:flex-row md:justify-between ">
         <div className="max-w-md md:max-w-sm lg:max-w-2xl text-center md:mb-0 md:text-left">
@@ -15,8 +15,8 @@ export default function HomePage() {
             inspiration to us all, and we hope this year brings even more
             wonderful memories. Celebrate big!
           </p>
-          <button onClick={()=>galleryRef.current.scrollIntoView()} className="font-semibold mt-6 md:mt-8 rounded bg-orange-500 px-4 py-3  text-white shadow-md transition-all hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-orange-300">
-            View Memories
+          <button onClick={()=>wishesRef.current.scrollIntoView()} className="font-semibold mt-6 md:mt-8 rounded bg-orange-500 px-4 py-3  text-white shadow-md transition-all hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-orange-300">
+            Drop Wishes
           </button>
         </div>
   

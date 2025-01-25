@@ -1,7 +1,8 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useContext, useRef, useState } from "react";
 import { useWishes } from "../hooks/useWishes";
 import { BiError } from "react-icons/bi";
 import WishesSkeleton from "./skeleton";
+import { SectionsRef } from "../App";
 
 const formatDate = (date) => {
     return new Intl.DateTimeFormat("en-US", {
@@ -14,6 +15,7 @@ const formatDate = (date) => {
     }).format(new Date(date));
   };
 export default function Wishes() {
+  const {commentRef} = useContext(SectionsRef)
     const viewMore = useRef(null)
     const [count, setCount] = useState(1)
     const [openId, setOpenId] = useState([])
@@ -42,7 +44,7 @@ export default function Wishes() {
     }
 
     return (
-      <div className="px-4 mb-12 space-y-6 max-w-2xl lg:max-w-4xl md:px-8 lg:px-12">
+      <div id="comment" ref = {commentRef} className="px-4 mb-12 space-y-6 max-w-2xl lg:max-w-4xl md:px-8 lg:px-12">
         <h2 className="text-xl md:text-2xl font-bold text-orange-600 text-center mb-6">
           Birthday Wishes 🎉
         </h2>

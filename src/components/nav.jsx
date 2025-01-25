@@ -6,7 +6,7 @@ import useNav from "../hooks/navHooks";
 
 const navLinks = [
   { name: "Gallery", path: "#gallery", icon:<GrGallery />  },
-  { name: "Wishes", path: "#wishes", icon: <FaRegCommentDots /> },
+  { name: "Wishes", path: "#comment", icon: <FaRegCommentDots /> },
 ];
 
 export default function Nav() {

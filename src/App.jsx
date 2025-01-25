@@ -17,6 +17,7 @@ const App = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const galleryRef = useRef(null)
   const wishesRef = useRef(null)
+  const commentRef = useRef(null)
 
   const handleDoubleClick = useCallback(()=>{
   
@@ -60,7 +61,7 @@ const App = () => {
             },
           }}
         />
-    <SectionsRef.Provider value={{galleryRef, wishesRef}}>
+    <SectionsRef.Provider value={{galleryRef, wishesRef, commentRef}}>
     <div onDoubleClick={()=>handleDoubleClick()}>
       <Nav/>
       <div className='mt-28 md:mt-36 lg:mt-40 px-3 md:px-8 lg:px-20 xl:px-32'>

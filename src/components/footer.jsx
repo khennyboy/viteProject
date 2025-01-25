@@ -6,11 +6,11 @@ import { SectionsRef } from "../App";
 
 
 export default function Footer() {
-  const {galleryRef, wishesRef} = useContext(SectionsRef)
+  const {galleryRef, commentRef} = useContext(SectionsRef)
 
   const navLinks = [
     { name: "Gallery", path: galleryRef, icon:<GrGallery /> },
-    { name: "Wishes", path: wishesRef, icon: <FaRegCommentDots /> },
+    { name: "Wishes", path: commentRef, icon: <FaRegCommentDots /> },
   ];
   return (
     <footer className="bg-footerColor px-4 py-16 md:py-24  text-white md:px-8 lg:px-20 xl:px-32 mt-24">
