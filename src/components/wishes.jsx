@@ -83,7 +83,7 @@ export default function Wishes() {
           ))}
         </div>
         <div className="text-right">
-        { wishesCount != 1 || 0  && 
+        { wishesCount   && 
           <button 
           onClick={()=>handleMoreWish()}
             ref={viewMore} 
